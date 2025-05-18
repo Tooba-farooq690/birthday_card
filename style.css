@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #d17ade; 
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.birthday-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 40px;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.side {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.side img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.side img:hover {
+  transform: scale(1.05);
+}
+
+.center-content {
+  max-width: 400px;
+  text-align: center;
+  z-index: 2;
+}
+
+.center-content h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8rem;
+  color: #d81b60;
+  text-shadow: 1px 1px 2px #fff;
+  margin-bottom: 20px;
+}
+
+.cake {
+  width: 200px;
+  margin: 20px 0;
+}
+
+.message {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* 🎈 Animated Balloons */
+.balloons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.balloons img {
+  position: absolute;
+  width: 80px;
+  animation: float 10s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+  }
+}
+
+
+@media (max-width: 768px) {
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .birthday-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    /* padding-top: 10px; */
+    gap: 12px; 
+  }
+
+  .side {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 90%;
+    justify-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .side img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .center-content {
+    text-align: center;
+    margin: 0; 
+    padding: 0 15px;
+  }
+
+  .center-content h1 {
+    font-size: 1.6rem;
+    margin: 5px 0;
+  }
+
+  .cake {
+    max-width: 100px;
+    margin: 10px 0;
+  }
+
+  .center-content .message {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  #showImageBtn {
+    margin-top: 10px;
+    font-size: 0.95rem;
+  }
+
+  #surpriseImage {
+    max-width: 85%;
+    margin-top: 15px;
+  }
+}
